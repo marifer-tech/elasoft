@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Elasoft</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/imagens/logo.png" alt="Elasoft">
+        </div>
+        <h1>Olá, <span id="userName">Usuária</span>!</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Mentorias</a></li>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <h2>Seu Desempenho</h2>
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </section>
+
+        <section class="courses">
+            <h2>Cursos em Andamento</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Programação Web</h3>
+                    <p>Progresso: 60%</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Data Science</h3>
+                    <p>Progresso: 45%</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 45%;"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>UX/UI Design</h3>
+                    <p>Progresso: 30%</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 30%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+    </main>
+
+    <script>
+        // Simulando o nome da usuária logada
+        document.getElementById("userName").textContent = "Ana";
+
+        // Dados do gráfico
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Programação Web', 'Data Science', 'UX/UI Design'],
+                datasets: [{
+                    label: 'Progresso (%)',
+                    data: [60, 45, 30],
+                    backgroundColor: ['#ff009d', '#ff4db8', '#ff85c2']
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

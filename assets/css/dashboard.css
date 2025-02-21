@@ -1,0 +1,107 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+}
+
+header h1 {
+    color: #ff009d;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #ff009d;
+}
+
+/* Dashboard */
+.dashboard {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.chart-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Cursos */
+.courses, .planned-courses {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #ff009d;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 10px;
+    background-color: #ff009d;
+}
+
+/* Cursos Pretendidos */
+.planned-courses ul {
+    list-style: none;
+}
+
+.planned-courses ul li {
+    background-color: #1a1a1a;
+    margin: 5px auto;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    text-align: center;
+}
